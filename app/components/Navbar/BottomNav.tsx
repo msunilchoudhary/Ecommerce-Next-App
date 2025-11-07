@@ -76,7 +76,7 @@ const BottomNav = () => {
         <nav className="hidden lg:flex space-x-6 menu-link relative">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <div key={link.label} className="relative group z-[99999]">
+              <div key={link.label} className="relative group z-99999">
                 <Link href={link.href} className="flex items-center gap-1">
                   {link.label}
                   <i className="ri-arrow-down-s-line"></i>

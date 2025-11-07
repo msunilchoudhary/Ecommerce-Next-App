@@ -1,0 +1,15 @@
+// Commands  Used
+
+** npm install react-hot-tool
+** npm install remixicon react-icons @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons
+** npm install swiper
+** npm install countup.js
+** npm install bootstrap-icons
+** npm install remixicon
+** npm install @iconify/react
+
+
+//global css 
+
+@import "bootstrap-icons/font/bootstrap-icons.css"
+@import "remixicon/fonts/remixicon.css"
