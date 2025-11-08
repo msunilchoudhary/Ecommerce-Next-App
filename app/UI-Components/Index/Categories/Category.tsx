@@ -40,7 +40,7 @@ const Category = () => {
   return (
     <div className="px-[5%] lg:px-[12%] py-10">
       <Swiper
-        slidesPerView={8}
+        slidesPerView={6}
         spaceBetween={20}
         loop={true}
         modules={[Autoplay]}
@@ -49,7 +49,7 @@ const Category = () => {
         }}
         speed={1500}
         breakpoints={{
-          1200: { slidesPerView: 7 },
+          1200: { slidesPerView: 6 },
           991: { slidesPerView: 5 },
           767: { slidesPerView: 4 },
           575: { slidesPerView: 3 },
@@ -66,8 +66,8 @@ const Category = () => {
                   className="transition-all duration-300"
                 />
               </div>
-              <div className="category-info flex flex-col items-center justify-center">
-                <h2 className="text-md Unbounded hover:text-(--primary-color) transition-all duration-300">
+              <div className="category-info flex flex-col items-center justify-center text-center">
+                <h2 className="text-[16px] Unbounded hover:text-(--primary-color) transition-all duration-300 mb-2">
                   {category.title}
                 </h2>
                 <p className="text-gray-500">{category.products}</p>
