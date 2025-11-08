@@ -13,3 +13,17 @@
 
 @import "bootstrap-icons/font/bootstrap-icons.css"
 @import "remixicon/fonts/remixicon.css"
+
+
+//Categories
+
+{image:Category1, title:"Vegitables" products:"125+ Products"}
+{image:Category2, title:"Fish & Meat" products:"125+ Products"}
+{image:Category3, title:"Vegitables" products:"125+ Products"}
+{image:Category4, title:"Vegitables" products:"125+ Products"}
+{image:Category5, title:"Vegitables" products:"125+ Products"}
+{image:Category6, title:"Vegitables" products:"125+ Products"}
+{image:Category7, title:"Vegitables" products:"125+ Products"}
+{image:Category8, title:"Vegitables" products:"125+ Products"}
+{image:Category9, title:"Vegitables" products:"125+ Products"}
+{image:Category10, title:"Vegitables" products:"125+ Products"}

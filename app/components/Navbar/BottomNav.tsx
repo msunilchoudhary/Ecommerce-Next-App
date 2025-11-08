@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "@/public/divyantra157x60.png"
+import Logo from "@/public/images/divyantra-logo.png"
 import { useEffect, useState } from "react";
 
 type NavLink = {
