@@ -18,12 +18,12 @@
 //Categories
 
 {image:Category1, title:"Vegitables" products:"125+ Products"}
-{image:Category2, title:"Fish & Meat" products:"125+ Products"}
-{image:Category3, title:"Vegitables" products:"125+ Products"}
-{image:Category4, title:"Vegitables" products:"125+ Products"}
-{image:Category5, title:"Vegitables" products:"125+ Products"}
-{image:Category6, title:"Vegitables" products:"125+ Products"}
-{image:Category7, title:"Vegitables" products:"125+ Products"}
-{image:Category8, title:"Vegitables" products:"125+ Products"}
-{image:Category9, title:"Vegitables" products:"125+ Products"}
-{image:Category10, title:"Vegitables" products:"125+ Products"}
+{image:Category2, title:"Fish & Meat" products:"90+ Products"}
+{image:Category3, title:"Desserts" products:"80+ Products"}
+{image:Category4, title:"Drinks & Juice" products:"60+ Products"}
+{image:Category5, title:"Fresh Fruits" products:"100+ Products"}
+{image:Category6, title:"Animals Food" products:"70+ Products"}
+{image:Category7, title:"Yammy Candy" products:"50+ Products"}
+{image:Category8, title:"Dairy & Egg" products:"50+ Products"}
+{image:Category9, title:"Snacks" products:"110+ Products"}
+{image:Category10, title:"Frozen Food" products:"125+ Products"}
