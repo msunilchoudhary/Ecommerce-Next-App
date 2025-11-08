@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/divyantra157x60.png"
 
 const MiddleNav = () => {
   return (
     <div className="w-full bg-green-50 border-b border-gray-300 relative">
-      <div className="flex items-center justify-between py-3 px-[8%] lg:px-[12%]">
+      <div className="flex items-center justify-between py-3 px-[5%] lg:px-[12%]">
         {/* Logo */}
         <Link href="#" className="">
-          <img
-            src="/divyantra157x60.png"
+          <Image
+            src={Logo}
             alt="Divyantra Enterprises"
             width="157"
             height="60"
