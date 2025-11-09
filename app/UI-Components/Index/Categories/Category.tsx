@@ -38,7 +38,7 @@ const categories: CategoryType[] = [
 
 const Category = () => {
   return (
-    <div className="px-[5%] lg:px-[12%] py-10">
+    <div className="px-[5%] lg:px-[12%] py-5">
       <Swiper
         slidesPerView={6}
         spaceBetween={20}
@@ -52,8 +52,8 @@ const Category = () => {
           1200: { slidesPerView: 6 },
           991: { slidesPerView: 5 },
           767: { slidesPerView: 4 },
-          575: { slidesPerView: 3 },
-          0: { slidesPerView: 3 },
+          575: { slidesPerView: 2 },
+          0: { slidesPerView: 2 },
         }}
       >
         {categories.map((category, index) => (

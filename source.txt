@@ -29,3 +29,14 @@ Tutorial link: https://www.youtube.com/watch?v=hLJ7ZJzF8cc
 {image:Category8, title:"Dairy & Egg" products:"50+ Products"}
 {image:Category9, title:"Snacks" products:"110+ Products"}
 {image:Category10, title:"Frozen Food" products:"125+ Products"}
+
+//Promo banners
+{image:promoBanner1, heading:"Everyday\nFresh Eggs"},
+{image:promoBanner2, heading:"Daily Fresh\nVegetables"},
+{image:promoBanner3, heading:"Everyday\nFresh Milk"},
+{image:promoBanner4, heading:"Everyday\nFresh Fruits"},
+
+
+<button className="text-md font-bold text-white bg-(--primary-color) px-5 py-3 mt-5">
+    Shop Now <i className="bi bi-bi-arrow-right ps-2"></i>
+</button>
