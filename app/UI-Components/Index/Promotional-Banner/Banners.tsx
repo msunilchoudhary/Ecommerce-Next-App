@@ -30,7 +30,7 @@ const Banners = () => {
                         </div>
                         <div className="banner-content absolute bottom-5 left-[5%]">
                             <h2 className="text-xl font-bold Merienda leading-7 whitespace-pre-line">{banner.heading}</h2>
-                            <button className="text-sm font-bold text-white rounded-3xl bg-(--primary-color) px-3 py-2 mt-3">
+                            <button className="text-sm font-bold text-white hover:bg-(--text-color) rounded-3xl bg-(--primary-color) px-3 py-2 mt-3">
                                 Shop Now <i className="bi bi-arrow-right ps-2"></i>
                             </button>
                         </div>
