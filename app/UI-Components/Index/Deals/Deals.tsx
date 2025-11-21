@@ -36,6 +36,7 @@ const dealItems: DealType[] = [
 
 import products from "@/app/JsonData/BestDeals.json";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const Deals = () => {
 
@@ -113,8 +114,35 @@ const Deals = () => {
                     {products.map((product) => (
                         <div key={product.id} className="product-wrap border border-gray-300 rounded-lg bg-white shadow-sm hover:shadow-md transition-all hover:border-(--primary-color) cursor-pointer duration-300">
                             <div className="flex relative justify-center items-center w-full">
-                                <Image src={product.image} alt={product.title} width="200" height="200" />
-                            </div>                              
+                                <Image src={product.image} alt={product.title} width="200" height="200" className="object-contain mt-5" />
+                                <div className="flex absolute top-0 right-2 justify-between items-center mt-2">
+                                    <button onClick={() => handleAddToCart(product)} className="px-4 py-1 font-semibold text-(--primery-color) bg-(--primary-light-color) cursor-pointer rounded-full text-md hover:text-white hover:bg-(--primary-color) transition-all duration-300">
+                                        Add <i className="bi bi-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <Link href={{
+                                pathname:"/UI/Components/Shop",
+                                query:{id:product.id}
+                            }} >
+                                <div className="space-y-1 px-2 my-2 product-info">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-gray-500 text-sm line-through">{product.lessprice}</span>
+                                        <span className="text-xl font-semibold">{product.price}</span>
+                                        <span className="text-sm text-gray-500">/qty</span>
+                                    </div>
+                                    <span className="flex items-center text-yellow-500 text-md">
+                                        <i className="bi bi-star-fill me-1"></i> {product.review}
+                                    </span>
+                                    <h2 className="text-md font-normal Unbounded my-2 hover:text-(--primary-color) transition-all duration-300">
+                                        {product.title}
+                                    </h2>
+                                    <h6 className="flex text-sm gap-2 mb-2 items-center text-gray-500">
+                                        <i className="bi bi-shop"></i> By Lucky Supermarket
+                                    </h6>
+                                    <h3 className="text-xs Unbounded font-semibold text-gray-500">Sold: {product.sold}</h3>
+                                </div>
+                            </Link>                          
                         </div>
                     ))}
                 </div>

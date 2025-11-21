@@ -2,9 +2,61 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "@/public/images/divyantra-logo.png"
+import Logo from "@/public/images/divyantra-logo.png";
+
+import BestDeals from "@/app/JsonData/BestDeals.json";
+import { useEffect, useMemo, useState } from "react";
+
+interface ProductType {
+  id: string;
+  title?: string;
+  Name?: string;
+  ProductImage?: string;
+  image?: string;
+  price?: string;
+  Price?: string;
+}
 
 const MiddleNav = () => {
+  const [cartCount, setCartCount] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState<ProductType[]>([]);
+
+  const allProducts: ProductType[] = useMemo(() => [...BestDeals], []);
+
+  // filter products by search
+
+  useEffect(() => {
+    if (!searchTerm.trim()) {
+      setResults([]);
+      return;
+    }
+
+    const filteredProducts = allProducts.filter((p) =>
+      (p.Name || p.title || "").toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setResults(filteredProducts);
+  }, [searchTerm, allProducts]);
+
+  useEffect(() => {
+    const loadCounts = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+      const uniqueCart = new Set(cart.map((item: any) => item.id));
+      const uniqueWishlist = new Set(wishlist.map((item: any) => item.id));
+
+      setCartCount(uniqueCart.size);
+      setWishlistCount(uniqueWishlist.size);
+    };
+
+    loadCounts();
+    window.addEventListener("storageUpdate", loadCounts);
+    return () => window.removeEventListener("storageUpdate", loadCounts);
+  }, []);
+
   return (
     <div className="w-full bg-green-50 border-b border-gray-300 relative">
       <div className="flex items-center justify-between py-3 px-[5%] lg:px-[12%]">
@@ -32,32 +84,42 @@ const MiddleNav = () => {
           {/* Location */}
           <div className="hidden lg:flex text-sm ms-5 items-center ps-2 bg-white border border-gray-400 rounded-lg justify-center">
             <i className="bi bi-geo-alt text-lg text-(--primary-color) "></i>
-            <select name="location" className="px-3 rounded-lg text-(--primary-color) font-semibold focus:border-(--primary-color) appearance-none cursor-pointer outline-none" defaultValue="New Delhi">
-                <option>New Delhi</option>
-                <option>Noida</option>
-                <option>Ghaziabad</option>
-                <option>Lucknow</option>
-                <option>Patna</option>
+            <select
+              name="location"
+              className="px-3 rounded-lg text-(--primary-color) font-semibold focus:border-(--primary-color) appearance-none cursor-pointer outline-none"
+              defaultValue="New Delhi"
+            >
+              <option>New Delhi</option>
+              <option>Noida</option>
+              <option>Ghaziabad</option>
+              <option>Lucknow</option>
+              <option>Patna</option>
             </select>
           </div>
-          
-          
         </div>
 
         {/* Wishlist & cart */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {/* Wishlist */}
-            <Link href="#" className="relative">
-                <i className="bi bi-heart text-gray-600 text-xl hover:text-(--primary-color)"></i>
-                <span className="absolute flex items-center justify-center w-4 h-4 -top-2 -right-2 bg-(--primary-color) text-white text-xs rounded-full">0</span>
-            </Link>
+        <div className="hidden lg:flex items-center space-x-6">
+          {/* Wishlist */}
+          <Link href="#" className="relative">
+            <i className="bi bi-heart text-gray-600 text-xl hover:text-(--primary-color)"></i>
+            {wishlistCount > 0 && (
+              <span className="absolute flex items-center justify-center w-4 h-4 -top-2 -right-2 bg-(--primary-color) text-white text-xs rounded-full">
+                {wishlistCount}
+              </span>
+            )}
+          </Link>
 
-            {/* Cart */}
-            <Link href="#" className="relative">
-                <i className="bi bi-cart text-gray-600 text-xl hover:text-(--primary-color)"></i>
-                <span className="absolute flex items-center justify-center w-4 h-4 -top-2 -right-2 bg-(--primary-color) text-white text-xs rounded-full">0</span>
-            </Link>
-          </div>
+          {/* Cart */}
+          <Link href="#" className="relative">
+            <i className="bi bi-cart text-gray-600 text-xl hover:text-(--primary-color)"></i>
+            {cartCount && (
+              <span className="absolute flex items-center justify-center w-4 h-4 -top-2 -right-2 bg-(--primary-color) text-white text-xs rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+        </div>
       </div>
     </div>
   );
